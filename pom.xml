@@ -23,7 +23,9 @@
 
 	<modules>
 		<module>swimming-alibaba-gateway</module>
-	</modules>
+        <module>base</module>
+        <module>swimming-pachong</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>
