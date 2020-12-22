@@ -12,9 +12,13 @@ import javax.servlet.http.HttpServletRequestWrapper;
 
 import org.apache.commons.io.IOUtils;
 
-
 /**
- *
+ * 
+ * @ClassName:  RequestWrapper   
+ * @Description:请求包装器   
+ * @author: jim
+ * @date:   2020年12月22日 上午10:30:54      
+ * @Copyright:
  */
 public class RequestWrapper extends HttpServletRequestWrapper {
 
