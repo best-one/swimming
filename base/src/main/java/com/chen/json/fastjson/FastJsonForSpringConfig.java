@@ -1,4 +1,4 @@
-package com.chen.json.fastjson;
+ package com.chen.json.fastjson;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
