@@ -1,0 +1,30 @@
+server:
+  port: 8070
+# 用于定义跟nacos的交互
+# nacos dataId格式 ${prefix}-${spring.profiles.active}.${file-extension}
+## ${prefix}两种方式配置
+### prefix 默认为 spring.application.name 的值
+### 也可以通过配置项 spring.cloud.nacos.config.prefix来配置
+## spring.profiles.active 即为当前环境对应的 profile
+### file-exetension 为配置内容的数据格式
+### 可以通过配置项 spring.cloud.nacos.config.file-extension 来配置
+spring:
+  application:
+    name: okb
+    
+  cloud:
+    config:
+      profile: dev
+      uri:
+      - http://localhost:8848
+    nacos:
+    # 根据log日志追踪了nacos dataId的配置，没找到spring激活配置文件的参数在这里的加成，发现先用的下面的的prefix，后用name，最后是上面的spirngname
+      config:
+        prefix: okb
+        name: okb-dev.yaml
+        ## 备注，大家习惯用的就是yaml跟properties,后者是默认值
+        file-extension: yaml
+        server-addr: 127.0.0.1:8848
+        
+        
+        
