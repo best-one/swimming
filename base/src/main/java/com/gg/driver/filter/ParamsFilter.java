@@ -39,7 +39,8 @@ public class ParamsFilter implements Filter{
 		//包装请求流跟相应流，不然后面的controller获取的都是空流，没有数据
 		RequestWrapper req = new RequestWrapper((HttpServletRequest) request);
 		ResponseWrapper resp = new ResponseWrapper((HttpServletResponse) response);
-		chain.doFilter(request, response);
+//		chain.doFilter(request, response);
+		chain.doFilter(req, resp);
 		//在上面这个方法前后可以计算一次请求的时间，这里不需要，我只需要记录请求相应的数据
 		String url = req.getRequestURI();
 		String reqData = IOUtils.toString(req.getInputStream(), StandardCharsets.UTF_8);
@@ -49,6 +50,8 @@ public class ParamsFilter implements Filter{
 		log.debug("request  url ：{}",url);
 		log.debug("request  data：{}",reqData);
 		log.debug("response data：{}",respData);
+		//点睛的地方，需要把数据重新回写
+		response.getWriter().write(respData);
 		
 	}
 
