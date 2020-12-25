@@ -51,6 +51,8 @@ public class ParamsFilter implements Filter{
 		log.debug("request  data：{}",reqData);
 		log.debug("response data：{}",respData);
 		//点睛的地方，需要把数据重新回写
+		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+//		response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 		response.getWriter().write(respData);
 		
 	}

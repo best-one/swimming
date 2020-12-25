@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
  * 安心获取请求流跟响应流的Filter
  * ，为啥用filter，是因为有时候会有全局相应参数包装，就是ControlerAdvice注解的类实现ResponseBody
  * 在spring 里面，有这么四个过滤路线，从外到内
- * Filter :==> incepter :==> controllerAdvice :==> aspect(学名AOP) :==> Controller
+ * Filter :==> Interceptor :==> ControllerAdvice :==> aspect(学名AOP) :==> Controller
  * 
  * @ClassName:  ParamsFilter   
  * @Description:TODO(描述这个类的作用)   
@@ -33,6 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @Slf4j
 public class ParamsFilter implements Filter{
+	@SuppressWarnings("deprecation")
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -52,6 +54,8 @@ public class ParamsFilter implements Filter{
 		log.debug("request  data：{}",reqData);
 		log.debug("response data：{}",respData);
 		//4、靓点，不回写到流里面，这个流就永远是空流，然后请求就没响应
+		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+		response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 		response.getOutputStream().write(respData.getBytes(StandardCharsets.UTF_8));
 	}
 
