@@ -15,6 +15,12 @@ public class TestController {
 		return params;
 	}
 	
+	@GetMapping("/p")
+	public TestReq gep(TestReq params){
+
+		return params;
+	}
+	
 	@Data
 	public static class TestReq {
 		private String test="test哈路李亚！";

@@ -1,7 +1,9 @@
 package com.gg.driver.filter;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,7 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
+
+import com.alibaba.fastjson.JSON;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -45,16 +50,26 @@ public class ParamsFilter implements Filter{
 		String url = req.getRequestURI();
 		String reqData = IOUtils.toString(req.getInputStream(), StandardCharsets.UTF_8);
 		String respData = IOUtils.toString(resp.getBytes(), StandardCharsets.UTF_8.name());
+		if(StringUtils.isBlank(reqData)) {
+			Map<String,String[]> map = req.getParameterMap();
+			log.info("普通:{}",JSON.toJSONString(map));
+		}
 		// 有时候，输出的json有美化，需要输出消除空格
 		reqData = reqData.replaceAll("\\s", "");
-		log.debug("request  url ：{}",url);
-		log.debug("request  data：{}",reqData);
-		log.debug("response data：{}",respData);
+		log.info("request  url ：{}",url);
+		log.info("request  data：{}",reqData);
+		log.info("response data：{}",respData);
 		//点睛的地方，需要把数据重新回写
+		log.info("my count length:{}",respData.getBytes(StandardCharsets.UTF_8).length);
+		log.info("history length：{}",resp.getBufferSize());
+		log.info("history length2：{}",resp.getBytes().length);
+		response.setContentLength(resp.getBytes().length);
 		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
 //		response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
-		response.getWriter().write(respData);
-		
+		PrintWriter out = response.getWriter();
+		out.write(respData);
+		out.flush();
+		out.close();
 	}
 
 }
