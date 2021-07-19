@@ -3,21 +3,27 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+  	<groupId>com.chen.jin</groupId>
+	<artifactId>swimming</artifactId>
+	<version>1.0.0</version>
+  </parent>
+
   <groupId>com.demo.nacos.config</groupId>
   <artifactId>nacos-config-demo</artifactId>
-  <version>1.0.0</version>
+ <!--  <version>1.0.0</version> -->
   <name>nacos-config-demo</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- spring-cloud、spring-boot、spring-alibaba三者版本依赖关系 -->
-		<spring-boot.version>2.3.2.RELEASE</spring-boot.version>
-		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-		<com.alibaba.cloud>2.2.3.RELEASE</com.alibaba.cloud>
+		<!-- <spring-boot.version>2.3.2.RELEASE</spring-boot.version> -->
+		<!-- <spring-cloud.version>Hoxton.SR8</spring-cloud.version> -->
+		<!-- <com.alibaba.cloud>2.2.3.RELEASE</com.alibaba.cloud> -->
 		<!-- 如果给alibaba添加spring boot，我还是喜欢上面的方式，下面的不喜欢 -->
-		<com.alibaba.boot>1.0.0</com.alibaba.boot>
+		<!-- <com.alibaba.boot>1.0.0</com.alibaba.boot> -->
 	</properties>
-	
+	<!-- 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -43,6 +49,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	 -->
   	<dependencies>
 		<dependency>
             <groupId>org.springframework.boot</groupId>
