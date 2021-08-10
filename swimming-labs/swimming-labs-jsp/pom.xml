@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.swimming.labs</groupId>
+		<artifactId>swimming-labs</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>org.swimming.labs.jsp</groupId>
+	<artifactId>swimming-labs-jsp</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+	<name>swimming-labs-jsp Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+
+		<!--引入springboot 内嵌tomcat对jsp的解析包 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!--servlet依赖jar -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+
+		<!--jsp依赖jar -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<!--Jstl标签依赖的jar包start -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>swimming-labs-jsp</finalName>
+		<!-- 添加资源处理 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<!-- <include>**/*.*</include> -->
+					<include>**/**</include>
+				</includes>
+			</resource>
+			 <!--打包成jar静态资源必须指明路径，打包成war可以不用-->
+			<resource>
+				<directory>src/main/webapp</directory>
+				<targetPath>META-INF/resources</targetPath>
+				<includes>
+					<!-- <include>**/*.*</include> -->
+					<include>**/**</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>
