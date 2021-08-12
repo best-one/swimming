@@ -21,5 +21,6 @@
 
 	<modules>
 		<module>swimming-labs-message-redis</module>
+		<module>swimming-labs-message-rabbitmq</module>
 	</modules>
 </project>
