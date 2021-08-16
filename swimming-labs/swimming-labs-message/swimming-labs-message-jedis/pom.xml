@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.swimming.labs</groupId>
+		<artifactId>swimming-labs-message</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>org.swimming.labs.message.jedis</groupId>
+	<artifactId>swimming-labs-message-jedis</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<exclusions>
+				<!-- spring-boot 2.x 默认使用lettuce连接redis，会出现redis连接超时后不恢复的情况 -->
+				<!-- 解决方案： 1. 替换lettuce为jedis，此处也是按照方案1解决 -->
+				<!-- 2. 开启lettuce的拓扑刷新，该方案未验证 -->
+				<exclusion>
+					<groupId>io.lettuce</groupId>
+					<artifactId>lettuce-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+
+</project>
