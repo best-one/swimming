@@ -38,6 +38,7 @@
 		<module>io-series</module>
 		<module>swimming-labs</module>
 		<module>swimming-data</module>
+		<module>swimming-rule</module>
 	</modules>
 	
 	<dependencies>
