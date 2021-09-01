@@ -37,6 +37,7 @@
 		<module>nacos-config-demo</module>
 		<module>io-series</module>
 		<module>swimming-labs</module>
+		<module>swimming-data</module>
 	</modules>
 	
 	<dependencies>
