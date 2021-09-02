@@ -34,6 +34,8 @@ public class TestAviator {
 		int a=34;
 		double b = 56.7;
 		System.out.println(a>b);
+
+		System.out.println(Double.doubleToLongBits(50.01)==Double.doubleToLongBits(50.0100));
 	}
 	
 	public static void susan() {

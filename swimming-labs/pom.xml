@@ -22,5 +22,6 @@
     <module>swimming-labs-jsp</module>
     <module>swimming-labs-engine</module>
     <module>swimming-labs-eureka</module>
+    <module>swimming-labs-modbus</module>
   </modules>
 </project>

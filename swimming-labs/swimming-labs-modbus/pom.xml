@@ -1,16 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.chen.jin</groupId>
-    <artifactId>swimming</artifactId>
+    <groupId>org.swimming.labs</groupId>
+    <artifactId>swimming-labs</artifactId>
     <version>1.0.0</version>
   </parent>
-  <groupId>com.chen.data</groupId>
-  <artifactId>swimming-data</artifactId>
+  <artifactId>swimming-labs-modbus</artifactId>
   <packaging>pom</packaging>
   <modules>
-  	<module>swimming-data-neo4j</module>
-  	<module>swimming-data-redis</module>
-  	<module>swimming-data-excel</module>
+  	<module>swimming-labs-modbus-4j</module>
   </modules>
 </project>

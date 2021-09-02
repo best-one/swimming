@@ -24,5 +24,6 @@
 		<module>swimming-labs-message-rabbitmq</module>
 		<module>swimming-labs-message-jedis</module>
 		<module>swimming-labs-message-lettuce</module>
+		<module>swimming-labs-message-mqtt</module>
 	</modules>
 </project>
