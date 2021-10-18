@@ -23,5 +23,6 @@
     <module>swimming-labs-engine</module>
     <module>swimming-labs-eureka</module>
     <module>swimming-labs-modbus</module>
+    <module>swimming-labs-template</module>
   </modules>
 </project>
