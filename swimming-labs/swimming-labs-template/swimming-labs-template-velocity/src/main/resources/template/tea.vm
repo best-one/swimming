@@ -1,0 +1,16 @@
+
+#foreach($name in $pada)
+    #if($name == "papa")
+        <div>
+            <div>$name</div>
+            <div>papa</div>
+            <div>dddd</div>
+        </div>
+    #end
+    #if($name != "papa")
+    #end
+        <div>
+            <div>$name</div>
+            <div>dddd</div>
+        </div>
+#end
