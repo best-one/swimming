@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    #      host: 192.168.1.100
+    #      port: 5672
+    #      username: admin
+    #      password: zhang29213
+    #      virtual-host: lctest
+    host: 192.168.1.35
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host:
+    #永久链接。解决后台突然报错断开连接
+    connection-timeout: 0

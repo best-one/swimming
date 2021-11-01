@@ -39,7 +39,8 @@
 		<module>swimming-labs</module>
 		<module>swimming-data</module>
 		<module>swimming-rule</module>
-	</modules>
+        <module>swimming-mapper-1.0</module>
+    </modules>
 
 	<dependencies>
 		<dependency>

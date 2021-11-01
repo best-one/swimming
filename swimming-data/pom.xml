@@ -12,5 +12,6 @@
   	<module>swimming-data-neo4j</module>
   	<module>swimming-data-redis</module>
   	<module>swimming-data-excel</module>
+      <module>swimming-data-mybatis-plus</module>
   </modules>
 </project>
