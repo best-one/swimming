@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chen.jin</groupId>
+        <artifactId>swimming</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>com.chen.jin</groupId>
+    <artifactId>swimming-mapper-1.0</artifactId>
+    <version>1.0.0</version>
+
+    <name>swimming-mapper-1.0</name>
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.mybatis</groupId>
+            <artifactId>mybatis-mapper</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!-- TODO 按需选择依赖 -->
+        <!-- 使用 Service 层封装时 -->
+        <dependency>
+            <groupId>io.mybatis</groupId>
+            <artifactId>mybatis-service</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!-- TODO 按需选择依赖 -->
+        <!-- 使用 ActiveRecord 模式时 -->
+        <dependency>
+            <groupId>io.mybatis</groupId>
+            <artifactId>mybatis-activerecord</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
