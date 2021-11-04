@@ -14,7 +14,7 @@
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.13.1</version>
+			<version>1.14.2</version>
 		</dependency>
 	
 		<!-- 第一种：一种实现前端虚拟节点运行的爬虫；只能用chrome来测试爬取  jvppeteer-->
