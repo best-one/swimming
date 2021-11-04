@@ -8,6 +8,11 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 参考 spring-boot-autoconfigure
+ * @see
+ * org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+ */
 @Configuration
 public class Config {
 
@@ -30,6 +35,11 @@ public class Config {
     @Bean
     public Queue myQueue() {
         return new Queue("myqueue");
+    }
+
+    public void test(){
+        RabbitAdmin rabbitAdmin = amqpAdmin();
+//        rabbitAdmin.de
     }
 
 }
