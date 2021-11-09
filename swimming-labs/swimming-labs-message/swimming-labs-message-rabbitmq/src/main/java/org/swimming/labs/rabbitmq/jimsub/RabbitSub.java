@@ -28,6 +28,7 @@ public class RabbitSub {
 	public SimpleMessageListenerContainer legacyPojoListener(ConnectionFactory connectionFactory) {
 		SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
 		container.setQueueNames(MAPPED_QUEUE);
+
 		MessageListenerAdapter messageListener = new MessageListenerAdapter(new Object() {
 
 			@SuppressWarnings("unused")
@@ -38,9 +39,11 @@ public class RabbitSub {
 
 		});
 		Jackson2JsonMessageConverter jsonConverter = new Jackson2JsonMessageConverter();
+
 //		jsonConverter.setClassMapper(classMapper());
 		messageListener.setMessageConverter(jsonConverter);
 		container.setMessageListener(messageListener);
+		container.start();
 		return container;
 	}
 	
