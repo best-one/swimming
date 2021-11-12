@@ -74,6 +74,7 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.4</version>
 		</dependency>
+		<!-- 一些项目会用到池化技术，一般都是基于这个jar，比如redis，rabbitmq -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-pool2</artifactId>
