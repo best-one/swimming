@@ -40,6 +40,7 @@
 		<module>swimming-data</module>
 		<module>swimming-rule</module>
         <module>swimming-mapper-1.0</module>
+        <module>swimming-commons</module>
     </modules>
 
 	<dependencies>
